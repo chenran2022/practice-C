@@ -1,0 +1,392 @@
+//int main()
+//{
+//	int n = 0;
+//	int arr[40] = { 0 };
+//	scanf("%d", &n);
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	int j = 0;
+//	for (i = 0; i < n - 1; i++)
+//	{
+//		j = 0;
+//		for (j = 0; j < n - 1 - i; j++)
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				int tmp = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = tmp;
+//			}
+//		}
+//	}
+//	for (i = n - 1; i >= 0; i--)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 0, b = 0;
+//	int ch = 0;
+//	while ((ch = getchar() )!= '0' )
+//	{
+//		if (ch == 'A')
+//			a++;
+//		if (ch == 'B')
+//			b++;
+//	}
+//	if (a > b)
+//
+//		printf("A");
+//	else if (a < b)
+//		printf("B");
+//	else
+//		printf("E");
+//	return 0;
+//}
+
+//int main()
+//{
+//	char buf[100] = { 0 };
+//	gets(buf);
+//	int i = 0;
+//	int a = 0;
+//	int b = 0;
+//	while (buf[i] != '0')
+//	{
+//		if (buf[i] == 'A')
+//			a++;
+//		else
+//			b++;
+//		i++;
+//	}
+//	if (a > b)
+//		printf("A");
+//	else if (a < b)
+//		printf("B");
+//	else
+//		printf("E");
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i = 0;
+//	/*while (scanf("%d", &i) != EOF)
+//	{
+//		if (i >= 140)
+//			printf("Genius\n");
+//	}*/
+//	while (~scanf("%d", &i))
+//	{
+//		if (i >= 140)
+//			printf("Genius\n");
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	//printf("%d", ~EOF);//0
+//	int i = 0;
+//	while (scanf("%d", &i) != EOF)
+//	{
+//		if ((i>=90)&&(i<=100))
+//			printf("good\n");
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int arr[3] = { 0 };
+//	int i = 0;
+//	while (1)
+//	{
+//		for (i = 0; i < 3; i++)
+//		{ 
+//			scanf("%d", &arr[i]);
+//
+//		}
+//		for (i = 1; i < 3; i++)
+//		{
+//			if (arr[0] < arr[i])
+//				arr[0 ]= arr[i];
+//		}
+//		printf("%d\n", arr[0]);
+//	}
+//	return 0;
+//}
+
+//#include<string.h>
+//int main()
+//{
+//	/*int ch = 0;
+//	char arr[] = "AaEIOUeiou";
+//	while ((ch = getchar()) != EOF)
+//	{
+//		int i = 0;
+//		for (i = 0; i < 10; i++)
+//		{
+//			if (arr[i] == ch)
+//			{
+//				printf("yuanyin\n");
+//				break;
+//			}
+//		}
+//		if (i == 10)
+//			printf("fuyin\n");
+//		getchar();//消除\n
+//	}*/
+//
+//	int ch = 0;
+//	char arr[] = "AaEIOUeiou";
+//	while (scanf(" %c",&ch) != EOF)
+//	//' '消除掉所有的空白字符,'\n'也会消化掉空白字符，不会为下次输入留下隐患如果在后面加空白符的话，需要输入一个不是空白符的字符来结束输入
+//	{
+//		if (strchr(arr, ch) != NULL)
+//			printf("yuanyin\n");
+//		else
+//			printf("fuyin\n");
+//		
+//	}
+//	return 0;
+//}
+
+//#include<ctype.h>
+//int main()
+//{
+//	int ch = 0;
+//	while (scanf(" %c\n", &ch)!=EOF)
+//	//不能在%c后面加空白符，因为如果在后面加空白符的话，需要输入一个不是空白符的字符来结束输入
+//	{
+//		//isalpha()判断是否为字母，是则返回真，否则返回假
+//		if (isalpha(ch))
+//			printf("%c is an alpha\n", ch);
+//		else
+//			printf("not\n");
+//	}
+//	return 0;
+//}
+
+//#include<ctype.h>
+//int main()
+//{
+//	int ch = 0;
+//	while (scanf(" %c", &ch) != EOF)
+//	{
+//		if (islower(ch))
+//			printf("%c\n", toupper(ch));
+//		if (isupper(ch))
+//			printf("%c\n", tolower(ch));
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 0, b = 0, c = 0;
+//	while (scanf("%d %d %d",&a,&b,&c) != EOF)
+//	{
+//		if ((a + b) > c && (a + c) > b && (b + c) > a)
+//		{
+//			if (a == b == c)
+//				printf("等边\n");
+//			else if ((a == b) || (b == c) || (a == c))
+//				printf("等腰\n");
+//			else
+//				printf("普通\n");
+//		}
+//		else
+//			printf("bushi\n");
+//	}
+//	return 0;
+//}
+
+//#include<math.h>
+//int main()
+//{
+//	double a, b, c;
+//	double x1, x2;
+//	while (~scanf("%lf %lf %lf", &a, &b, &c))
+//	{
+//		if (a == 0)
+//			printf("bushierci\n");
+//		else
+//		{
+//			double i = b * b - 4 * a * c;
+//			if (i > 0)
+//			{
+//				x1 = (-b - sqrt(i)) / (2 * a);
+//				x2= (-b + sqrt(i)) / (2 * a);
+//			}
+//			else if (i == 0)
+//			{
+//				x1 = x2 = -b / (2 * a);
+//			}
+//			else
+//			{
+//				x1= -b / (2 * a);
+//				x2 = sqrt(-i) / (2 * a);
+//			}
+//			printf("x1=%.2lf;x2=%.2lf\n", x1, x2);
+//		}
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int year = 0;
+//	int month = 0;
+//	while (~scanf("%d %d", &year, &month))
+//	{
+//		if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0))
+//		{
+//			if (month == 2)
+//				printf("29\n");
+//			else if ((month == 1) || (month == 3) || (month == 5) || (month == 7) || (month == 8) || (month == 10) || (month == 12))
+//			{
+//				printf("31\n");
+//			}
+//			else
+//				printf("30\n");
+//		}
+//		else if (month == 2)
+//			printf("28\n");
+//		else if ((month == 1) || (month == 3) || (month == 5) || (month == 7) || (month == 8) || (month == 10) || (month == 12))
+//		{
+//			printf("31\n");
+//		}
+//		else
+//			printf("30\n");
+//
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int year = 0;
+//	int month = 0;
+//	int days[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+//	while (~scanf("%d %d", &year, &month))
+//	{
+//		int day = days[month - 1];
+//		if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0))
+//		{
+//			if (month == 2)
+//				day++;
+//		}
+//		printf("%d\n", day);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	double n1 = 0.0;
+//	double n2 = 0.0;
+//	char ch = 0;
+//	double i = 0.0;
+//	while (~scanf("%lf %c %lf", &n1, &ch, &n2))
+//	{
+//		switch (ch)
+//		{
+//		case '+':
+//			i = n1 + n2;
+//			printf("%.4lf%c%.4lf=%.4lf\n", n1, ch, n2, i);
+//			break;
+//		case '-':
+//			i = n1 - n2;
+//			printf("%.4lf%c%.4lf=%.4lf\n", n1, ch, n2, i);
+//			break;
+//		case '*':
+//			i = n1 * n2;
+//			printf("%.4lf%c%.4lf=%.4lf\n", n1, ch, n2, i);
+//			break;
+//		case '/':
+//			if (n2 == 0)
+//			{
+//				printf("n2输入错误\n");
+//				break;
+//			}
+//			else
+//			{
+//				i = n1 / n2;
+//				printf("%.4lf%c%.4lf=%.4lf\n", n1, ch, n2, i);
+//				break;
+//			}
+//		default:
+//			printf("符号输入错误\n");
+//			break;
+//		}
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i = 0;
+//	int row = 0;
+//	int col = 0;
+//	while (~scanf("%d", &i))
+//	{
+//		for (row = 0; row < i; row++)
+//		{
+//			for (col = 0; col < i; col++)
+//			{
+//				printf("* ");
+//			}
+//			printf("\n");
+//		}
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i = 0;
+//	while (~scanf("%d", &i))
+//	{
+//		int row = 0;
+//		for (row = 0; row < i; row++)
+//		{
+//			int col = 0;
+//			for (col = 0; col <row+1 ; col++)
+//			{
+//				printf("* ");
+//			}
+//			printf("\n");
+//		}
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i = 0;
+//	while(~scanf("%d", &i))
+//	{
+//		int row = 0;
+//		for (row = 0; row < i; row++)
+//		{
+//			int col = 0;
+//			for (col = 0; col <i-row-1 ; col++)
+//			{
+//				printf(" ");
+//			}
+//			for (col = 0; col < row + 1; col++)
+//			{
+//				printf("* ");
+//			}
+//			printf("\n");
+//		}
+//	}
+//	return 0;
+//}
