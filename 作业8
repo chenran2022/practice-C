@@ -1,0 +1,205 @@
+//lesson 12
+
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int arr[100] = { 0 };
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	int x = 0;
+//	scanf("%d", &x);
+//	int count = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		if (arr[i] == x)
+//			count++;
+//	}
+//	printf("%d\n", count);
+//	return 0;
+//}
+
+//int main()
+//{
+//	printf("printf(\"Hello world\\n\")\n");
+//	printf("cout<<\"hello  world!\"<<endl");
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i = 0;
+//	int count = 0;
+//	for (i = 100; i < 1000; i++)
+//	{
+//		int k = 0;
+//		for (k = 2; k < i; k++)
+//		{
+//			if (i % k == 0)
+//				break;
+//		}
+//		if (k == i)
+//			count++;
+//	}
+//	printf("%d\n", count);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int arr[1000] = { 0 };
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	for (i = 0; i < n-1; i++)
+//	{
+//		int tmp = 0;
+//		int k = 0;
+//		for (k = 0; k < n-i-1; k++)
+//		{
+//			if (arr[k] > arr[k + 1])
+//			{
+//				tmp = arr[k];
+//				arr[k] = arr[k + 1];
+//				arr[k + 1] = tmp;
+//			}
+//		}
+//	}
+//	for (i = 0; i < n - 1; i++)
+//	{
+//		if (arr[i] == arr[i + 1])
+//		{
+//			int k = i;
+//			for (k = i; k < n - 1; k++)
+//			{
+//				int tmp = arr[k];
+//				arr[k] = arr[k + 1];
+//				arr[k + 1] = tmp;
+//				
+//			}
+//			n--;
+//			i--;
+//		}
+//	}
+//	for (i = 0; i < n; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int arr[1001] = { 0 };
+//	int k = 0;
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%d", &k);
+//		arr[k] = k;
+//	}
+//	for (i = 1; i <= 1000; i++)
+//	{
+//		if (arr[i] == i)
+//			printf("%d ", i);
+//	}
+//	return 0;
+//}
+
+#include<stdlib.h>
+typedef struct Node
+{
+	int date;
+	struct Node* next;
+}Node;
+int main()
+{
+	Node* list = NULL;//链表首地址
+	Node* tail = NULL;//链表尾地址
+	int n = 0;
+	scanf("%d", &n);
+	int i = 0;
+	int m = 0;
+	for(i = 0; i < n; i++)
+	{
+		scanf("%d", &m);
+		Node* pn = (Node*)malloc(sizeof(Node));
+		pn->date = m;
+		pn->next = NULL;
+		
+		//插入第一个元素
+		if (list == NULL)
+		{
+			list = pn;
+			tail = pn;
+		}
+		//插入第二个以及后面的元素
+		else
+		{
+			tail->next= pn;
+			tail = pn;
+
+		}
+	}
+	int d = 0;
+	scanf("%d", &d);
+	//删除指定元素
+	Node* cur = list;
+	Node* prev = NULL;
+	while (cur)
+	{
+		if (cur->date == d)
+		{
+			
+			Node* pd = cur;
+			//如果删除的是第一个元素
+			if (cur == list)
+			{
+				list = list->next;
+				cur = list;
+			}
+			//如果不是第一个元素
+			else
+			{
+				prev->next = cur->next;
+				cur = prev->next;
+			}
+			free(pd);
+			
+			n--;
+		}
+		else
+		{
+			prev = cur;
+			cur = cur->next;
+		}
+	}
+	printf("%d\n", n);
+	cur = list;
+	while (cur)
+	{
+		printf("%d ", cur->date);
+		cur = cur->next;
+	}
+	//释放链表
+	Node* del = NULL;
+	cur = list;
+	while (cur)
+	{
+		del = cur;
+		cur = cur->next;
+		free(del);
+	}
+	list = NULL;
+
+	return 0;
+}
