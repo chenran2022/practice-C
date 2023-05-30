@@ -82,8 +82,7 @@
 //			{
 //				int tmp = arr[k];
 //				arr[k] = arr[k + 1];
-//				arr[k + 1] = tmp;
-//				
+//				arr[k + 1] = tmp;				
 //			}
 //			n--;
 //			i--;
